@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f2f3f2;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    background-color: #383838;
+    position: sticky;
+    top: 0;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    box-sizing: border-box;
+    padding: 5px 20px 5px 20px;
+    align-items: center;
+    color: white;
+}
+
+.header-container a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-container .right-side {
+    justify-self: end;
+}
+
+.header-container .right-side a {
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+}
+
+.header-container .right-side a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.workplace {
+    width: 70%;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+}
+
+.workplace #title {
+    font-weight: 500;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 10px;
+}
+
+.workplace p {
+    font-size: 15px;
+    color: gray;
+    padding-top: 5px;
+    font-weight: 300;
+    position: relative;
+}
+
+.workplace .section-one{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 90px max-content;
+    align-items: center;
+}
+
+.workplace .section-one img{
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+} 
+
+.workplace .section-one input{
+    visibility: hidden;
+    position: absolute;
+}
+
+.workplace .section-one .buttons{
+    display: grid;
+    justify-items: center;
+    grid-row-gap: 10px;
+    margin-left: 20px;
+}
+
+.workplace .section-one button{
+    padding: 0 5px 0 5px;
+}
+
+.workplace .section h1{
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.workplace .section{
+    margin-top: 10px;
+}
+
+.workplace .section input{
+    height: 27px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid gray;
+}
+
+.workplace .section-two{
+   display: grid;
+   grid-template-columns: 50% 50%;
+}
+
+.workplace .section-two .left{
+    width: 97%;
+}
+
+.workplace .section-two .right{
+    width: 97%;
+    display: grid;
+    justify-self: right;
+}
+
+.workplace #userAddress{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.workplace .error{
+    color: red;
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: -10px;
+    width: max-content;
+    visibility: hidden;
+}
+
+.workplace #saveBtn {
+    position: relative;
+    left: 50%;
+    display: grid;
+    justify-items: center;
+    transform: translate(-50%,0);
+    margin-top: 30px;
+    background-color: #003ecb;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 5px 25px;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+.workplace #saveBtn:hover {
+   cursor: pointer;
+   background-color: #0437ab;
+}

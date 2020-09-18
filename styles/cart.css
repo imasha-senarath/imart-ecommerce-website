@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 2000px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1000px;
+  background-color: #f2f2f2;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #383838;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: auto auto;
+  box-sizing: border-box;
+  padding: 5px 20px 5px 20px;
+  align-items: center;
+  color: white;
+}
+
+.header-container a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.header-container .right-side {
+  justify-self: end;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.header-container .main-menu {
+  margin-right: 30px;
+  align-self: center;
+}
+
+.header-container .main-menu li {
+  list-style: none;
+  font-weight: 500;
+  display: inline;
+  padding-left: 10px;
+}
+
+.header-container .main-menu li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.header-container .search-bar {
+  margin-right: 10px;
+}
+
+.header-container .search-bar input {
+  width: 300px;
+  height: 30px;
+  border: 1px solid #c7c7c7;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.header-container .search-bar button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: #279ed9;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.header-container .profile-area {
+  padding-left: 10px;
+  align-self: center;
+}
+
+.header-container .dropdown {
+  position: relative;
+}
+
+.header-container .dropdown-content {
+  display: none;
+  right: -20px;
+  position: absolute;
+  width: max-content;
+  background-color: #383838;
+  opacity: 0.9;
+  padding: 20px 30px 20px 30px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.header-container .profile-area:hover .dropdown-content {
+  display: block;
+}
+
+
+.header-container .dropdown-content h1 {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.header-container .dropdown-content button {
+  padding: 1px 3px;
+  margin-top: 5px;
+}
+
+.header-container .dropdown-content button:hover {
+  cursor: pointer;
+}
+
+.header-container .dropdown-content .profile-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.header-container .profile-area .icon {
+  width: 25px;
+  height: 25px;
+}
+
+.header-container .profile-area .icon:hover {
+  cursor: pointer;
+}
+
+.header-container .profile-area .user {
+  margin-left: 20px;
+}
+
+.cart-container{
+  padding: 10px;
+}
+
+.product-container{
+  width: 60%;
+}
+
+.product-container .product{
+  display: grid;
+  grid-template-columns: 70px auto auto 20px;
+  align-items: center;
+  background-color: white;
+  border-radius: 3px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+
+.product-container .product img{
+  width: 70px;
+}
+
+.product-container .product h1{
+  margin-left: 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.product-container .product h2{
+  justify-self: right;
+  margin-right: 10px;
+  padding-right: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  border-right: 1px solid #f2f2f2;
+}
+
+.product-container .product .delete{
+  width: 20px;
+  opacity: 0.7;
+}
+
+.product-container .product .delete:hover{
+  cursor: pointer;
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+  .features img {
+    width: 40px;
+    padding-right: 5px;
+  }
+
+  .features h1 {
+    font-size: 0.9rem;
+  }
+
+  .features .section {
+    width: 120px;
+    padding: 20px 15px 20px 15px;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .header-container .right-side input {
+    width: 150px;
+  }
+
+  .features img {
+    width: 40px;
+    padding-right: 10px;
+  }
+
+  .features h1 {
+    display: inline;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .header-container {
+    padding: 10px 10px 10px 10px;
+  }
+
+  .header-container .left-side {
+    display: grid;
+    grid-template-columns: min-content auto;
+  }
+
+  .header-container .left-side h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-container .main-menu {
+    display: none;
+    position: absolute;
+    margin-top: 20px;
+  }
+
+  .features {
+    grid-template-columns: 50% 50%;
+  }
+
+  .features {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .features .section {
+    width: 200px;
+    padding: 20px 15px 20px 15px;
+    margin-top: 15px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .header-container .search-bar {
+    display: none;
+  }
+
+  .header-container .dropdown-content {
+    right: 0px;
+    right: -10px;
+  }
+
+  .product-container{
+    width: 100%;
+    grid-template-columns: auto;
+  }
+
+  .product-container .image {
+    text-align: center;
+  }
+
+  .product-container .image img{
+    width: 96%;
+  }
+  
+  
+}

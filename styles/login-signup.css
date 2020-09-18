@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #383838;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    box-sizing: border-box;
+    padding: 5px 20px 5px 20px;
+    align-items: center;
+    color: white;
+}
+
+.header-container a {
+    color: white;
+    text-decoration: none;
+}
+
+.header-container .right-side {
+    justify-self: end;
+}
+
+.header-container .right-side a {
+    font-size: 15px;
+    font-weight: 400;
+    color: white;
+    text-decoration: none;
+}
+
+.header-container .right-side a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.main-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 30px 50px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.main-box h1 {
+    font-size: 15px;
+    margin-top: -20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.main-box .form {
+    display: grid;
+    justify-items: center;
+}
+
+.main-box input {
+    width: 250px;
+    margin-top: 10px;
+    padding: 3px;
+    padding-left: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    height: 25px;
+    border-radius: 5px;
+}
+
+.main-box input:focus {
+    outline: none;
+    border: 1px solid rgba(0, 114, 255, 0.5);
+}
+
+.main-box .fp {
+    font-size: 12px;
+    text-align: end;
+    margin-top: 10px;
+    color: #003ecb;
+}
+
+.main-box .fp:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.main-box .error {
+    margin-top: 5px;
+    color: red;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.main-box button {
+    width: 80px;
+    height: 30px;
+    margin-top: 20px;
+    background-color: #003ecb;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.main-box button:hover {
+    background-color: #0437ab;
+    cursor: pointer;
+}
+
+.main-box p {
+    font-size: 10px;
+    width: 250px;
+    margin-top: 20px;
+}
