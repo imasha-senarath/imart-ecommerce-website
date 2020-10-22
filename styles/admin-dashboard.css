@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.work-place .summary{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    color: white;
+    justify-content: center;
+    column-gap: 50px;
+    text-align: center;
+    padding: 20px 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.work-place .summary h1{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.work-place .summary p{
+    font-size: 13px;
+    margin-top: -5px;
+}
+
+.work-place .summary .products, .users, .orders, .admins{
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.work-place .summary .products{
+    background-color: rgb(248, 59, 59);
+   
+}
+
+.work-place .summary .users{
+    background-color: rgb(53, 194, 95);
+}
+
+.work-place .summary .orders{
+    background-color: rgb(182, 62, 182);
+}
+
+.work-place .summary .admins{
+    background-color: rgb(61, 131, 197);
+}
+
+.work-place .summary img{
+    width: 60px;
+    padding: 10px;
+}
+
+.work-place .summary-two{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 5px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.work-place .summary-two .list{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 20px;
+}
+
+.work-place .summary-two h1{
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.work-place .summary-two p{
+    padding: 5px 10px;
+}
+
+.work-place .summary-two .right{
+    text-align: right;
+}
+
+.work-place .summary-two .users-two{
+    border-right: 1px solid rgb(230, 230, 230);
+}

@@ -18,13 +18,14 @@ $productImage = $rowProduct['product_image'];
 $productDes = $rowProduct['product_des'];
 $productPrice = $rowProduct['product_price'];
 
-$userEmail = $_COOKIE['userEmail'];
-if(isset($userEmail))
+$userID = $_COOKIE['userID'];
+if(isset($userID))
 {
-    $getUser = "select * from users where user_email='$userEmail'";
+    $getUser = "select * from users where user_id='$userID'";
     $runUser = mysqli_query($con, $getUser);
-    $rowUser = mysqli_fetch_array($runUser);
-    $userName = $rowUser['user_name'];
+    $row = mysqli_fetch_array($runUser);
+    $userName = $row['user_name'];
+    $userImage = $row['user_image'];
 }
 
 ?>
@@ -36,63 +37,42 @@ if(isset($userEmail))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iMart</title>
     <link rel="stylesheet" href="styles/view-product.css">
+    <link rel="stylesheet" href="styles/basic.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="header">
-            <div class="header-container">
+
+        <div class="header-container">
+            <div class="header">
                 <div class="left-side">
-                    <h1><a href="home.php">iMart</a></h1>
+                    <h1 onclick="location.href='home.php'">iMart</h1>
+                </div>
+                <div class="center-menu">
+
                 </div>
                 <div class="right-side">
-                    <div class="main-menu">
-                        <ul>
-                            <li class="yy"><a>Messages</a></li>
-                            <li><a>Orders</a></li>
-                            <li><a>Saved</a></li>
-                        </ul>
-                    </div>
-                    <form method="POST" class="search-bar" action="">
-                        <input type="search" placeholder="Search Items">
-                        <button name="gooo">GO</button>
-                    </form>
-
-                    <div class="profile-area">
-                        <img class="icon cart" src="images/shopping-cart.png" alt="">
-                        <img class="icon user" src="images/profile.png" alt="">
-                        <div class="dropdown">
-                            <div class="dropdown-content">
-                                <?php
-                                    if(isset($userEmail))
-                                    {
-                                        echo"
-                                        <h1 class='profile-button' onclick='viewProfile()'>Hello, $userName</h1>
-                                        <button onclick='logout()'>Logout</button>
-                                        ";
-                                    }
-                                    else {
-                                        echo"
-                                        <h1>Welcome to iMart</h1>
-                                        <button onclick='login()'>Login</button>
-                                        <button onclick='signup()'>Signup</button>
-                                        ";
-                                    }
-                                 ?>
-                            </div>
-                        </div>
-                    </div>
+                    <img id="cart" src="images/shopping-cart.png" onclick="cart()" alt="">
+                    <?php
+                        if(isset($userID))
+                        {
+                            echo"<img id='dp' src='storage/users/$userImage' alt=''style='border-radius: 50px;' onclick='viewProfile()'/>";
+                        }
+                        else {
+                            echo"<img id='dp' src='images/user.png' alt='' onclick='viewProfile()'>";
+                        }
+                        ?>
                 </div>
             </div>
         </div>
 
-        <div class="product-container">
+        <div class="product">
             <div class="image">
                 <?php echo"<img src='storage/products/$productImage' alt=''>"?>
             </div>
-            <div id="ee" class="details">
+            <div class="details">
                 <?php echo"<h1>$productName</h1>"?>
                 <?php echo"<h2>Rs $productPrice</h2>"?>
                 <?php echo"<p>$productDes</p>"?>
@@ -103,9 +83,20 @@ if(isset($userEmail))
                 <div id="cartSucess"></div>
             </div>
         </div>
+
+        <div class="footer-container">
+            <div class="footer">
+                <div class="designer">
+                    <h1>Designed by</h1>
+                    <img src="images/full-logo.png">
+                </div>
+                <p>Copyright ©2020 iMart All rights reserved.</p>
+            </div>
+        </div>
     </div>
 </body>
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="scripts/view-product.js"></script>
+<script src="scripts/basic.js"></script>
 
 </html>

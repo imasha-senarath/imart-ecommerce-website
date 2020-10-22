@@ -8,69 +8,6 @@ body {
     background-color: #f2f3f2;
 }
 
-.wrapper {
-    width: 100%;
-    max-width: 2000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.header {
-    position: sticky;
-    top: 0;
-    background-color: #383838;
-}
-
-.header-container {
-    width: 100%;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    grid-template-columns: auto auto;
-    box-sizing: border-box;
-    padding: 5px 20px 5px 20px;
-    align-items: center;
-}
-
-.header-container a {
-    color: white;
-    text-decoration: none;
-}
-
-.header-container .right-side {
-    justify-self: end;
-    display: grid;
-    grid-template-columns: auto auto auto;
-}
-
-.header-container .main-menu {
-    margin-right: 20px;
-    align-self: center;
-}
-
-.header-container .main-menu li {
-    list-style: none;
-    font-weight: 500;
-    display: inline;
-    padding-left: 10px;
-    font-size: 0.9rem;
-}
-
-.header-container .main-menu li:hover {
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.header-container .icon {
-    width: 25px;
-    height: 25px;
-}
-
-.header-container .icon:hover {
-    cursor: pointer;
-}
-
 .profile-area {
     width: 70%;
     border-radius: 5px;
@@ -120,13 +57,6 @@ body {
     margin-top: -7px;
 }
 
-.profile-area button {
-    display: inline-block;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
 .profile-area .section-two {
     box-sizing: border-box;
     border-top: 1px solid #f2f2f2;
@@ -138,25 +68,42 @@ body {
     margin-right: 5px;
 }
 
-.profile-area button{
+.profile-area .button-container{
     position: relative;
+    width: max-content;
     left: 50%;
-    display: grid;
-    justify-items: center;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
+}
+
+.profile-area button{
     margin-top: 20px;
-    background-color: #003ecb;
     border: none;
     outline: none;
     color: white;
-    padding: 5px 25px;
+    padding: 5px 15px;
     font-size: 15px;
     border-radius: 3px;
+    display: inline-block;
+    margin-right: 10px;
+    transition: .3s;
 }
 
-.profile-area button:hover {
+.profile-area #editProfileBtn{
+    background-color: #003ecb;
+}
+
+.profile-area #logoutBtn{
+    background-color: rgb(214, 0, 0);
+}
+
+.profile-area #editProfileBtn:hover {
     cursor: pointer;
-    background-color: #0437ab;
+    background-color: #002f9e;
+}
+
+.profile-area #logoutBtn:hover {
+    cursor: pointer;
+    background-color: rgb(179, 0, 0);
 }
 
 .orders-area {

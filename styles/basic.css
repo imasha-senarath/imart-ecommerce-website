@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 500px;
+}
+  
+.header-container {
+    position: sticky;
+    top: 0;
+    background-color: rgb(1, 81, 172);
+    z-index: 1;
+}
+  
+.header {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    color: white;
+    padding: 7px;
+    align-items: center;
+}
+
+.header .left-side h1:hover{
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.header .right-side{
+    display: flex;
+    height: min-content;
+    justify-self: right;
+}
+  
+.header .right-side img{
+    margin-left: 20px;
+    width: 30px; 
+}
+
+.header .right-side img:hover{
+    cursor: pointer; 
+    opacity: 0.8;
+}
+
+.footer-container{
+    background-color: rgb(31, 31, 31);
+}
+
+.footer{
+    width: 100%;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-left: auto;
+    color: white;
+    padding-top: 30px;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.footer .designer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .designer h1{
+    font-size: 15px;
+    font-weight: 400;
+    margin-right: 5px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-top: 3px;
+    width: max-content;
+    display: inline-block;
+ }
+
+.footer .designer img{
+   width: 120px;
+}
+
+.footer p{
+    text-align: center;
+    margin-top: 30px;
+    opacity: 0.7;
+}

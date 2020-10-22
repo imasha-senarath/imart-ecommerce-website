@@ -86,3 +86,8 @@ function editProfileDataValidation(userID) {
         // window.open("../shopping-web-site/edit-profile.php?validate=true", "_self");
     }
 }
+
+function userLogout() {
+    document.cookie = "userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+    window.open("../shopping-web-site/login.php", "_self");
+}

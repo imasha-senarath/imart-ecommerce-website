@@ -1,31 +1,3 @@
-var index = 0;
-show();
-
-function show() {
-    var i;
-    var slides = document.getElementsByClassName("slide");
-    var dots = document.getElementsByTagName("span");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"
-    }
-
-    index = index + 1;
-    if (index > slides.length) {
-        index = 1;
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace("active", "");
-    }
-    slides[index - 1].style.display = "block";
-    dots[index - 1].className += "active";
-    setTimeout(show, 1500);
-}
-
-function logout() {
-    document.cookie = "userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/shopping-web-site;";
-    window.open("home.php", "_self");
-}
-
 function viewProfile() {
     var ID = getCookie('userID');
     if (ID.length == 0) {
@@ -60,7 +32,3 @@ function getCookie(cname) {
     }
     return "";
 }
-
-$(".yy").click(function () {
-    alert("The paragraph was clicked.");
-});

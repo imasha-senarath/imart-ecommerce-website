@@ -14,6 +14,7 @@ if(isset($userID))
     $userEmail = $row['user_email'];
     $userImage = $row['user_image'];
     $userAddress = $row['user_address'];
+    $userPhone = $row['user_phone'];
     $userID = $row['user_id'];
 }
 else
@@ -56,19 +57,23 @@ if(isset($_POST['userName']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iMart</title>
     <link rel="stylesheet" href="styles/edit-profile.css">
+    <link rel="stylesheet" href="styles/basic.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="header">
-            <div class="header-container">
+        <div class="header-container">
+            <div class="header">
                 <div class="left-side">
-                    <h1><a href="dashboard.php">iMart</a></h1>
+                    <h1 onclick="location.href='home.php'">iMart</h1>
+                </div>
+                <div class="center-menu">
+
                 </div>
                 <div class="right-side">
-                    <a href="signup.php">Logout</a>
+
                 </div>
             </div>
         </div>
@@ -119,6 +124,16 @@ if(isset($_POST['userName']))
             <button id='saveBtn' onClick='editProfileDataValidation()'> Save </button>
             <div id="saveProfileLoader"></div>
 
+        </div>
+
+        <div class="footer-container">
+            <div class="footer">
+                <div class="designer">
+                    <h1>Designed by</h1>
+                    <img src="images/full-logo.png">
+                </div>
+                <p>Copyright ©2020 iMart All rights reserved.</p>
+            </div>
         </div>
     </div>
     <script src="jquery/jquery-3.5.1.min.js"></script>

@@ -36,29 +36,28 @@ else {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo"$userName"; ?></title>
     <link rel="stylesheet" href="styles/profile.css">
+    <link rel="stylesheet" href="styles/basic.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="header">
-            <div class="header-container">
+
+        <div class="header-container">
+            <div class="header">
                 <div class="left-side">
-                    <h1><a href="home.php">iMart</a></h1>
+                    <h1 onclick="location.href='home.php'">iMart</h1>
+                </div>
+                <div class="center-menu">
+
                 </div>
                 <div class="right-side">
-                    <div class="main-menu">
-                        <ul>
-                            <li><a>Messages</a></li>
-                            <li><a>Orders</a></li>
-                            <li><a>Saved</a></li>
-                        </ul>
-                    </div>
-                    <img class="icon cart" src="images/shopping-cart.png" alt="">
+                    <img id="cart" src="images/shopping-cart.png" onclick="cart()" alt="">
                 </div>
             </div>
         </div>
+
         <div class="profile-area">
             <h1 id="title"> Profile</h1>
             <div class="section-one">
@@ -97,7 +96,10 @@ else {
                 ?>
 
             </div>
-            <button type='button' onclick='editProfile()'> Edit Profile </button>
+            <div class="button-container">
+                <button id="editProfileBtn" type='button' onclick='editProfile()'> Edit Profile </button>
+                <button id="logoutBtn" type='button' onclick='userLogout()'> Logout </button>
+            </div>
         </div>
 
         <div class='orders-area'>
@@ -141,8 +143,20 @@ else {
         </div>
 
     </div>
+
+    <div class="footer-container">
+        <div class="footer">
+            <div class="designer">
+                <h1>Designed by</h1>
+                <img src="images/full-logo.png">
+            </div>
+            <p>Copyright ©2020 iMart All rights reserved.</p>
+        </div>
+    </div>
+
     <script src="jquery/jquery-3.5.1.min.js"></script>
     <script src="scripts/profile.js"></script>
+    <script src="scripts/basic.js"></script>
 </body>
 
 </html>

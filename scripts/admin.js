@@ -13,9 +13,6 @@ function editProfileDataValccidation(userID) {
     var imageExtension = imageName.split(".").pop().toLowerCase();
     var imageSize = imageFile.size;
 
-
-
-
     var userImage = document.getElementById("img-preview").src;
     var userName = document.getElementById("userName").value;
     var userEmail = document.getElementById("userEmail").value;

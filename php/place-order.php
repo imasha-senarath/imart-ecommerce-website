@@ -11,7 +11,8 @@ if(isset($userID) && isset($productID))
     
     $insertOrderQuery = "insert into orders (order_id, user_id, product_id, order_date, order_status) values ('$orderID', '$userID', '$productID', NOW(), 'pending')";
     $runInsertOrder = mysqli_query($con, $insertOrderQuery);
-    echo"<p class='cart-success'> $productName order complete. </p>";
+    //echo"<p class='cart-success'> $productName order complete. </p>";
+    echo"<script>window.open('../shopping-web-site/view-order.php?order_id=$orderID', '_self')</script>";
 }
 else
 {

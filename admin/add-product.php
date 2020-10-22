@@ -53,16 +53,18 @@ if(isset($_POST['submit']))
             <a href="#">Settings</a>
         </div>
         <div class="workplace">
-            <h1> Add Product</h1>
-            <form action="add-product.php" method="post" enctype="multipart/form-data">
-                <input type="text" name="productName" placeholder="Name">
-                <input type="text" name="productPrice" placeholder="Price (LKR)">
-                <textarea type="text" name="productDes" placeholder="Description" rows="10" cols="50"></textarea>
-                Select Item Image:
-                <input type="file" name="productImage" onchange="loadfile(event)">
-                <img id="img-preview" width="200px" style="min-height: 120px;">
-                <input type="submit" value="Add Product" name="submit">
-            </form>
+            <div class="add-products">
+                <h1> Add Product</h1>
+                <form action="add-product.php" method="post" enctype="multipart/form-data">
+                    <input type="text" name="productName" placeholder="Name">
+                    <input type="text" name="productPrice" placeholder="Price (LKR)">
+                    <textarea type="text" name="productDes" placeholder="Description" rows="10" cols="50"></textarea>
+                    Select Item Image:
+                    <input type="file" name="productImage" onchange="loadfile(event)">
+                    <img id="img-preview" width="200px" style="min-height: 120px;">
+                    <input type="submit" value="Add Product" name="submit">
+                </form>
+            </div>
         </div>
     </div>
     <script src="../scripts/admin.js"></script>
