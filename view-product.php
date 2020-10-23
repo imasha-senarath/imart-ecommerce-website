@@ -95,8 +95,9 @@ if(isset($userID))
         </div>
     </div>
 </body>
+
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="scripts/view-product.js"></script>
-<script src="scripts/basic.js"></script>
+
 
 </html>

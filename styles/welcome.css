@@ -1,0 +1,79 @@
+.wrapper{
+    background-color: rgb(235, 235, 235);
+}
+
+.header {
+    grid-template-columns: auto;
+    text-align: center;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 400px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px;
+}
+
+.main-container .login{
+    border-right: 1px solid rgba(0, 0, 0, 0.103);
+}
+
+.main-container h1 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.main-container .form {
+    display: grid;
+    justify-items: center;
+}
+
+.main-container input {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    width: 80%;
+}
+
+.main-container input:focus {
+    outline: none;
+    border: 1px solid rgba(0, 114, 255, 0.5);
+}
+
+.main-container .error {
+    margin-top: 5px;
+    color: red;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.main-container button {
+    padding: 10px 40px;
+    margin-top: 20px;
+    background-color: #003ecb;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.main-container button:hover {
+    background-color: #0437ab;
+    cursor: pointer;
+}
+
+.main-container p {
+    font-size: 13px;
+    padding: 20px;
+}

@@ -140,6 +140,5 @@ if(isset($userID))
 </body>
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="scripts/checkout.js"></script>
-<script src="scripts/basic.js"></script>
 
 </html>

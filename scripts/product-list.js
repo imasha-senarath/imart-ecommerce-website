@@ -1,3 +1,12 @@
+function search() {
+    var searchKeyword = document.getElementById("searchInput").value;
+
+    if (searchKeyword != "") {
+        var url = "../shopping-web-site/product-list.php?search_keyword=" + searchKeyword;
+        window.open(url, "_self");
+    }
+}
+
 function viewProfile() {
     var ID = getCookie('userID');
     if (ID.length == 0) {

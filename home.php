@@ -141,6 +141,5 @@ $runProduct = mysqli_query($con, $getProduct);
 
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="scripts/home.js"></script>
-<script src="scripts/cookies-manage.js"></script>
 
 </html>

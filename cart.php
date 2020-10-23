@@ -138,14 +138,8 @@ $cartItemsCount = mysqli_num_rows($rungetCartQuery);
         </div>
     </div>
 
-
-    <script src="scripts/home.js"></script>
-    <script>
-    src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-    </script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="scripts/basic.js"></script>
     <script src="scripts/cart.js"></script>
+    <script src="jquery/jquery-3.5.1.min.js"></script>
 
 </body>
 

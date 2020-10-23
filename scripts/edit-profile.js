@@ -61,28 +61,5 @@ function editProfileDataValidation(userID) {
         imageError.style.visibility = "hidden";
 
         document.getElementById("editProfileForm").submit();
-
-
-        // var form = $('#editProfileForm')[0];
-        // var form_data = new FormData(form);
-
-        // $.ajax({
-        //     url: "../shopping-web-site/edit-profile.php",
-        //     method: "POST",
-        //     data: form_data,
-        //     contentType: false,
-        //     cache: false,
-        //     processData: false,
-        //     success: function (data) {
-        //         $('#saveProfileLoader').html(data);
-        //     }
-        // })
-
-        // var d = new Date();
-        // d.setTime(d.getTime() + (2 * 60 * 1000));
-        // var expires = "expires=" + d.toUTCString();
-        // document.cookie = 'validate = true' + ";" + expires + ";path=../shopping-web-site";
-
-        // window.open("../shopping-web-site/edit-profile.php?validate=true", "_self");
     }
 }

@@ -1,6 +1,7 @@
 var index = 0;
 show();
 
+//image slide show
 function show() {
     var i;
     var slides = document.getElementsByClassName("slide");
