@@ -61,6 +61,11 @@ function getCookie(cname) {
     return "";
 }
 
-$(".yy").click(function () {
-    alert("The paragraph was clicked.");
-});
+function search() {
+    var searchKeyword = document.getElementById("searchInput").value;
+
+    if (searchKeyword != "") {
+        var url = "../shopping-web-site/product-list.php?search_keyword=" + searchKeyword;
+        window.open(url, "_self");
+    }
+}

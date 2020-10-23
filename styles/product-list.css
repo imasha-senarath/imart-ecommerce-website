@@ -1,0 +1,91 @@
+.wrapper{
+background-color: rgb(240, 240, 240);
+}
+
+.main-container {
+    max-width: 1000px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 20px;
+    min-height: 500px;
+}
+
+.main-container .serach-bar{
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 470px 80px;
+    margin-top: 10px;
+    column-gap: 10px;;
+}
+
+.main-container .serach-bar input{
+    padding: 10px 5px;
+    font-size: 15px;
+    border: 1px solid  rgb(168, 195, 255);
+    outline: none;
+  }
+  
+  .main-container .serach-bar button{
+    color: white;
+    background-color: rgb(0, 73, 231);
+    border: 1px solid  rgb(0, 73, 231);
+    font-size: 20px;
+    outline: none;
+  }
+  
+  .main-container .serach-bar button:hover{
+    background-color: rgb(0, 62, 196);
+    border: 1px solid  rgb(0, 62, 196);
+    cursor: pointer;
+  }
+
+  .main-container .product-list{
+      margin-top: 30px;
+  }
+
+  .main-container .product-list .product{
+    display: grid;
+    grid-template-columns: 70px auto auto;
+    background-color: rgb(247, 247, 247);
+    margin-bottom: 10px;
+    align-items: center;    
+    padding: 10px;
+    border-radius: 3px;
+  }
+  
+  .main-container .product-list .product:hover{
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+  }
+  
+  .main-container .product-list .product img{
+    width: 100px;
+  }
+  
+  .main-container .product-list .product h1{
+    margin-left: 40px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  
+  .main-container .product-list .product h2{
+    justify-self: right;
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .main-container .product-list h3{
+    text-align: center;
+    font-weight: 400;
+    opacity: 0.8;
+    margin-top: 100px;
+  }

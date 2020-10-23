@@ -4,6 +4,7 @@
 include("include/connection.php");
 
 $userID = $_COOKIE['userID'];
+$searchKeyword = $_GET["search_keyword"];
 
 if(isset($userID))
 {
@@ -15,8 +16,12 @@ if(isset($userID))
 }
 
 //get products data
-$getProduct = "select * from products LIMIT 8";
-$runProduct = mysqli_query($con, $getProduct);
+if(isset($searchKeyword))
+{
+    $getProductQuery = "select * from products where product_name like '%".$searchKeyword."%'";
+    $runProductQuery = mysqli_query($con, $getProductQuery);
+    $numberOfProducts = mysqli_num_rows($runProductQuery);
+}
 ?>
 
 <html lang="en">
@@ -25,7 +30,7 @@ $runProduct = mysqli_query($con, $getProduct);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iMart | Home</title>
-    <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/product-list.css">
     <link rel="stylesheet" href="styles/basic.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -61,67 +66,33 @@ $runProduct = mysqli_query($con, $getProduct);
             </div>
         </div>
 
-        <div class="banners">
-            <div class="slide-show">
-                <div class="slide">
-                    <img src="images/cover1.webp" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/cover2.webp" alt="">
-                </div>
-                <div class="slide">
-                    <img src="images/cover3.webp" alt="">
-                </div>
+        <div class="main-container">
+            <div class="serach-bar">
+                <?php echo"<input id='searchInput' type='text' value='$searchKeyword' placeholder='Search for Products'>";?>
+                <button onclick='search()'>GO</button>
             </div>
-            <div class="dot-container">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-
-        <div class="features">
-            <div class="section">
-                <img src="images/fast-delivery.png" alt="">
-                <h1>Fast Delivery</h1>
-            </div>
-            <div class="section">
-                <img src="images/money-return.png" alt="">
-                <h1>Money Return</h1>
-            </div>
-            <div class="section">
-                <img src="images/support.png" alt="">
-                <h1>Online Support</h1>
-            </div>
-            <div class="section">
-                <img src="images/security.png" alt="">
-                <h1>Payement Security</h1>
-            </div>
-        </div>
-
-        <div class="serach-bar-container">
-            <input id="searchInput" type="text" placeholder="Search for Products">
-            <button onclick='search()'>GO</button>
-        </div>
-
-        <div class="exclusive-products">
-            <h1>Exclusive Products</h1>
-            <div class=" container">
+            <div class="product-list">
                 <?php
-                    while($rowProduct = mysqli_fetch_array($runProduct)){
-                        $productImage = $rowProduct['product_image'];
-                        $productName = $rowProduct['product_name'];
-                        $productPrice = $rowProduct['product_price'];
-                        $productID = $rowProduct['product_id'];
+                if($numberOfProducts != 0)
+                {
+                    while($productRow = mysqli_fetch_array($runProductQuery)){
+                        $productImage = $productRow['product_image'];
+                        $productName = $productRow['product_name'];
+                        $productPrice = $productRow['product_price'];
+                        $productID = $productRow['product_id'];
 
                         echo"
-                            <div class='section' onclick=location.href='view-product.php?product_id=$productID'>
-                                <img src='storage/products/$productImage' alt=''>
-                                <h1>$productName</h1>
-                                <h2>Rs $productPrice</h2>
-                            </div>
+                        <div class='product' onclick=location.href='view-product.php?product_id=$productID'>
+                            <img src='storage/products/$productImage' alt=''>
+                            <h1>$productName</h1>
+                            <h2>Rs $productPrice</h2>
+                        </div>
                         ";
                     }
+                } else {
+                    echo"<h3>None of the products matched this search</h3>";
+                }
+                
                 ?>
             </div>
         </div>
@@ -141,6 +112,5 @@ $runProduct = mysqli_query($con, $getProduct);
 
 <script src="jquery/jquery-3.5.1.min.js"></script>
 <script src="scripts/home.js"></script>
-<script src="scripts/cookies-manage.js"></script>
 
 </html>
