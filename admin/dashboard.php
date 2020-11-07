@@ -40,24 +40,24 @@ $rungetOrder = mysqli_query($con, $getOrderQuery);
             <ul>
                 <li style="color:white; font-weight:600;">Dashboard</li>
                 <li onclick="location.href='manage-products.php'">Manage Products</li>
-                <li>Manage Users</li>
-                <li>Manage Orders</li>
+                <li onclick="location.href='manage-users.php'">Manage Users</li>
+                <li onclick="location.href='manage-orders.php'">Manage Orders</li>
             </ul>
             <p>Settings</p>
         </div>
         <div class="work-place">
             <div class="summary">
-                <div class="products">
+                <div class="products" onclick="location.href='manage-products.php'">
                     <img src="../images/products.png" alt="">
                     <?php echo" <h1>0$productCount Products</h1> "; ?>
                     <p>All products</p>
                 </div>
-                <div class="users">
+                <div class="users" onclick="location.href='manage-users.php'">
                     <img src="../images/products.png" alt="">
                     <?php echo" <h1>0$usersCount Users </h1> "; ?>
                     <p>Registered users</p>
                 </div>
-                <div class="orders">
+                <div class="orders" onclick="location.href='manage-orders.php'">
                     <img src="../images/products.png" alt="">
                     <?php echo" <h1>0$ordersCount Orders </h1> "; ?>
                     <p>Pending orders</p>

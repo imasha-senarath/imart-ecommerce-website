@@ -1,0 +1,57 @@
+.orders-container{
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.orders-container h1 {
+    padding: 5px;
+    font-weight: 500; 
+    font-size: 20px;
+    border-bottom: 1px solid rgb(219, 219, 219);
+}
+
+.orders-container .order{
+    padding: 10px;
+    background-color: rgb(249, 249, 249);
+    margin: 5px;
+}
+
+.orders-container h2{
+    font-weight: 500; 
+    font-size: 18px;
+    color: rgb(44, 95, 236);
+}
+
+.orders-container .main{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-top: 5px;
+}
+
+.orders-container .main p{
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.orders-container .main p span{
+    font-weight: 300;
+}
+
+.orders-container .controller{
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    justify-content: center;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.orders-container button{
+    background-color: rgb(65, 105, 235);
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px;
+    cursor: pointer;
+}

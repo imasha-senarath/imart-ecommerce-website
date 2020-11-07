@@ -30,6 +30,7 @@
 .work-place .summary .products, .users, .orders, .admins{
     border-radius: 5px;
     padding: 10px;
+    cursor: pointer;
 }
 
 .work-place .summary .products{

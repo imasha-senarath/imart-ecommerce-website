@@ -21,6 +21,11 @@ if(isset($_POST['submit']))
     }
 }
 
+//getting products data
+$getProductQuery = "select * from products";
+$runProductQuery = mysqli_query($con, $getProductQuery);
+
+
 unset($_POST['submit']);
 
 ?>
@@ -43,10 +48,9 @@ unset($_POST['submit']);
             <ul>
                 <li onclick="location.href='dashboard.php'">Dashboard</li>
                 <li style="color:white; font-weight:600;">Manage Products</li>
-                <li>Manage Users</li>
-                <li>Manage Orders</li>
+                <li onclick="location.href='manage-users.php'">Manage Users</li>
+                <li onclick="location.href='manage-orders.php'">Manage Orders</li>
             </ul>
-            <p>Settings</p>
         </div>
         <div class="workplace">
 
@@ -71,12 +75,30 @@ unset($_POST['submit']);
                 </form>
             </div>
 
-            <div class="manage-product">
+            <div class="manage-products">
                 <h1>Manage Products</h1>
+                <div class="products-list"> 
+                <?php
+                    while($rowProduct = mysqli_fetch_array($runProductQuery)) {
+                        $productImage = $rowProduct['product_image'];
+                        $productName = $rowProduct['product_name'];
+                        $productID = $rowProduct['product_id'];
+                        echo"
+                        <div class='product'>
+                            <div class='main' onclick=location.href='../view-product.php?product_id=$productID'>
+                                <img src='../storage/products/$productImage' alt=''>
+                                <h2>$productName</h1>
+                            </div>
+                            <img class='delete' src='../images/delete.png' alt='' onClick='deleteItem($productID)' title='Delete';>
+                        </div>
+                        ";
+                    }
+                ?>
+                </div>
             </div>
-
         </div>
     </div>
+    <script src="../jquery/jquery-3.5.1.min.js"></script>
     <script src="../scripts/admin.js"></script>
 </body>
 

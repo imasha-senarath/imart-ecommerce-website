@@ -69,9 +69,7 @@ textarea {
 .workplace .add-products input:focus, textarea:focus {
     border: 2px solid rgba(17, 0, 255, 0.274);
     outline: none;
-  
 }
-
 
 .workplace .add-products input[type="submit"] {
     background-color: #279ed9;
@@ -84,7 +82,6 @@ textarea {
     position: relative;
     left: 50%;
     transform: translate(-50%,0);
-
 }
 
 .workplace .add-products input[type="submit"]:hover {
@@ -104,4 +101,58 @@ textarea {
     font-weight: 500; 
     font-size: 20px;
     border-bottom: 1px solid rgb(219, 219, 219);  
+}                                                                                                                                               
+  
+.workplace .manage-products{
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.manage-products h1{
+    padding: 5px;
+    font-weight: 500; 
+    font-size: 20px;
+    border-bottom: 1px solid rgb(219, 219, 219);  
+}
+  
+.manage-products .product{
+    display: grid;
+    grid-template-columns: auto 20px;
+    background-color: rgb(250, 250, 250);
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+  
+.manage-products .main{
+    display: grid;
+    grid-template-columns: 50px max-content max-content;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.manage-products .main img{
+    width: 50px;
+}
+  
+.manage-products .main h2{
+    margin-left: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    border-right: 1px solid #f2f2f2;
+}
+
+.manage-products .main h3{
+    margin-left: 10px;
+    font-weight: 300;
+    font-size: 15px;
+    border-right: 1px solid #f2f2f2;
+}
+  
+.manage-products .delete{
+    width: 20px;
+    opacity: 0.7;
+    cursor: pointer;
 }

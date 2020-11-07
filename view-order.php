@@ -88,7 +88,6 @@ $productDes = $rowProductData['product_des'];
                     <?php echo"<p> Order #$orderID</p>";?>
                     <?php echo"<p id='date'> Placed on $orderDate</p>";?>
                 </div>
-                <button type='button'> Add a Feedback</button>
             </div>
             <?php echo "                  
                 <div class='section-two' onclick=location.href='view-product.php?product_id=$productID'>
@@ -99,7 +98,7 @@ $productDes = $rowProductData['product_des'];
             "?>
 
             <div class='section-three'>
-                <p id='title2'>Order Status:</p>
+                <?php echo"<p id='title2'>Order Status: $OrderStatus</p>";?>
                 <div class='order-status'>
                     <div id='line'>
                         <div id='line1'></div>
@@ -117,7 +116,6 @@ $productDes = $rowProductData['product_des'];
                     <p id='shipped2'>Shipped</p>
                     <p id='delivered2'>Delivered</p>
                 </div>
-                <p id='deliveryDate'>Estimated Delivery Date: Pending</p>
             </div>
 
             <div class='section-four'>
