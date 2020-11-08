@@ -3,20 +3,61 @@
 <?php
 include("include/connection.php");
 
-$userID = $_COOKIE['userID'];
+if(isset($_POST['userLoginEmail'])) {
+    $userEmail = htmlentities(mysqli_real_escape_string($con, $_POST['userLoginEmail']));
+    $userPassword = htmlentities(mysqli_real_escape_string($con, $_POST['userLoginPassword']));
 
-if(isset($userID))
-{
-    $getUser = "select * from users where user_id='$userID'";
-    $runUser = mysqli_query($con, $getUser);
-    $row = mysqli_fetch_array($runUser);
-    $userName = $row['user_name'];
-    $userImage = $row['user_image'];
+    $selectUser = "select * from users where user_email='$userEmail' AND user_password='$userPassword'";
+    $query = mysqli_query($con, $selectUser);
+    $check = mysqli_num_rows($query);
+
+    if($check == 1) {
+        $row = mysqli_fetch_array($query);
+        $userID = $row['user_id'];
+        setcookie("userID", $userID, time() + (86400 * 7));
+        echo"<script>window.open('home.php', '_self')</script>";
+    } 
+    else {
+        echo"<script> alert('Wrong email or password.') </script>";
+    }
 }
 
-//get products data
-$getProduct = "select * from products LIMIT 8";
-$runProduct = mysqli_query($con, $getProduct);
+if(isset($_POST['signupEmail'])){
+       
+    $userName = htmlentities(mysqli_real_escape_string($con,$_POST['signupName']));
+    $userEmail = htmlentities(mysqli_real_escape_string($con,$_POST['signupEmail']));
+    $userPassword = htmlentities(mysqli_real_escape_string($con,$_POST['signupPassword']));
+    
+    $check_email = "select * from users where user_email = '$userEmail'";
+    $run_email = mysqli_query($con,$check_email);
+    $check = mysqli_num_rows($run_email);
+
+    if($check == 1){
+        //$_SESSION["error"] = "Email already exist.";
+        echo"<script> alert('Email already exist') </script>";
+    }
+
+    if (isset($userName) && isset($userEmail) && isset($userPassword) && $check != 1){
+
+        function generateRandomString() {
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $charactersLength = strlen($characters);
+            $randomString = '';
+            for ($i = 0; $i < 15; $i++) {
+                $randomString .= $characters[rand(0, $charactersLength - 1)];
+            }
+            return $randomString;
+        }
+
+        $userID = generateRandomString();
+   
+        $insert = "insert into users (user_id, user_name, user_email, user_password) values ('$userID', '$userName','$userEmail', '$userPassword')";
+        $query = mysqli_query($con, $insert);
+
+        setcookie("userID", $userID, time() + (86400 * 7));
+        echo"<script>window.open('home.php', '_self')</script>";
+    }
+}
 ?>
 
 <html lang="en">
@@ -24,7 +65,7 @@ $runProduct = mysqli_query($con, $getProduct);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iMart | Home</title>
+    <title>iMart</title>
     <link rel="stylesheet" href="styles/basic.css">
     <link rel="stylesheet" href="styles/welcome.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -41,37 +82,40 @@ $runProduct = mysqli_query($con, $getProduct);
         </div>
 
         <div class="main-container">
+
             <div class="login">
                 <h1>Welcome Back</h1>
                 <form id="loginForm" method="post" class="form" action="">
 
-                    <input type="text" placeholder="Email" name="userEmail">
-                    <input type="text" placeholder="Password" name="userPassword">
-
-                    <?php if(isset($_SESSION["error"])) {?>
-                    <p class="error"><?=$_SESSION["error"]?></p>
-                    <?php unset($_SESSION["error"]);}?>
-
-                    <button type="submit" name="login_btn">Login</button>
+                    <input id="loginEmail" type="text" placeholder="Email" name="userLoginEmail">
+                    <input id="loginPassword" type="text" placeholder="Password" name="userLoginPassword">
+             
+                    <p class="error login-error">Error</p>
+         
+                    <button id="login-btn" type="button" name="login_btn">Login</button>
                 </form>
             </div>
+
             <div class="signup">
                 <h1>Get Started with iMart</h1>
                 <form id="signupForm" method="post" class="form" action="">
 
-                    <input type="text" placeholder="Username" name="userName">
-                    <input type="email" placeholder="Email" name="userEmail">
-                    <input type="password" placeholder="Password" name="userPassword">
+                    <input id="signupName" type="text" placeholder="Username" name="signupName">
+                    <input id="signupEmail" type="signupEmail" placeholder="Email" name="signupEmail">
+                    <input id="signupPassword" type="signupPassword" placeholder="Password" name="signupPassword">
 
-                    <?php if(isset($_SESSION["error"])) {?>
-                    <p class="error"><?=$_SESSION["error"]?></p>
-                    <?php unset($_SESSION["error"]);}?>
+                    <p class="error signup-error">Error</p>
 
-                    <button type="submit" name="signup_btn">Sign Up</button>
+                    <!--<?php //if(isset($_SESSION["error"])) {?>
+                    <p class="error"><?//=$_SESSION["error"]?></p>
+                    <?php //unset($_SESSION["error"]);}?>-->
+
+                    <button id="signup-btn" type="button" name="signup_btn">Sign Up</button>
 
                 </form>
                 <p>By clicking signup button, you agree to our Terms of Services and Privacy Policy.</p>
             </div>
+
         </div>
 
 
@@ -89,6 +133,6 @@ $runProduct = mysqli_query($con, $getProduct);
 </body>
 
 <script src="jquery/jquery-3.5.1.min.js"></script>
-<script src="scripts/home.js"></script>
+<script src="scripts/welcome.js"></script>
 
 </html>

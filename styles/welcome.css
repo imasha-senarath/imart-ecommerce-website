@@ -52,15 +52,14 @@
 }
 
 .main-container .error {
-    margin-top: 5px;
     color: red;
-    font-size: 10px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 400;
+    visibility: hidden;
 }
 
 .main-container button {
-    padding: 10px 40px;
-    margin-top: 20px;
+    padding: 10px;
     background-color: #003ecb;
     color: white;
     border: none;

@@ -28,6 +28,9 @@ $orderDate = $rowOrderData['order_date'];
 $productID = $rowOrderData['product_id'];
 $OrderStatus = $rowOrderData['order_status'];
 $OrderAddress = $rowOrderData['order_address'];
+$orderName = $rowOrderData['order_name'];
+$orderphone = $rowOrderData['order_phone'];
+
 echo"<script> var orderStatus = '$OrderStatus';</script>";
 
 //getting product data
@@ -39,7 +42,13 @@ $productImage = $rowProductData['product_image'];
 $productPrice = $rowProductData['product_price'];
 $productDes = $rowProductData['product_des'];
 
-
+if(isset($_POST['order-cancel-btn'])){
+   
+    if(strval($OrderStatus) == 'pending') {
+        $changeStatusQuery = "UPDATE orders SET order_status='cancelled' WHERE order_id= $orderID";
+        $runQuery = mysqli_query($con, $changeStatusQuery);
+    }
+}
 
 ?>
 
@@ -119,17 +128,24 @@ $productDes = $rowProductData['product_des'];
             </div>
 
             <div class='section-four'>
-                <button type='button'> Cancel Order</button>
-                <button type='button'> Contact iMart</button>
+                <form name="cancelSubmitForm" method="post" >
+                    <button name="order-cancel-btn" id="order-cancel-btn" type='submit'> Cancel Order</button>
+                    <button type='button'> Contact iMart</button>
+                </form>
+                
             </div>
         </div>
 
         <div class='additional'>
             <div class='address'>
-                <h1> Shipping Address</h1>
-                <p> Imasha Senarath</p>
-                <?php echo"<p> $OrderAddress </p>";?>
-                <p> 0774534735</p>
+            <?php
+            echo"
+            <h1> Shipping Address</h1>
+            <p> $orderName</p>
+            <p> $OrderAddress </p>
+            <p> $orderphone</p>
+            ";
+            ?>
 
             </div>
             <div class='total'>

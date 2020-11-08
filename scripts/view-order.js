@@ -21,11 +21,22 @@ function orderStatusSettings() {
         pendingTxt.style.fontWeight = 700;
     }
 
+    if (orderStatus == 'rejected') {
+        $("#order-cancel-btn").css("opacity", "0.5");
+        $(".order-status").css("opacity", "0.5");
+    }
+
+    if (orderStatus == 'cancelled') {
+        $("#order-cancel-btn").css("opacity", "0.5");
+        $(".order-status").css("opacity", "0.5");
+    }
+
     if (orderStatus == 'processing') {
         pending.style.backgroundColor = '#39c43e';
         processing.style.backgroundColor = '#39c43e';
         stageOne.style.backgroundColor = '#39c43e';
         processingTxt.style.fontWeight = 700;
+        $("#order-cancel-btn").css("opacity", "0.5");
     }
 
     if (orderStatus == 'shipped') {
@@ -35,6 +46,7 @@ function orderStatusSettings() {
         stageOne.style.backgroundColor = '#39c43e';
         stageTwo.style.backgroundColor = '#39c43e';
         shippedTxt.style.fontWeight = 700;
+        $("#order-cancel-btn").css("opacity", "0.5");
     }
 
     if (orderStatus == 'delivered') {
@@ -46,9 +58,10 @@ function orderStatusSettings() {
         stageTwo.style.backgroundColor = '#39c43e';
         stageThree.style.backgroundColor = '#39c43e';
         deliveredTxt.style.fontWeight = 700;
+        $("#order-cancel-btn").css("opacity", "0.5");
     }
-
 }
+
 
 function viewProfile() {
     var ID = getCookie('userID');

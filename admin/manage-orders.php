@@ -59,9 +59,9 @@ $runOrdersQuery = mysqli_query($con, $getOrdersQuery);
                             </div>
                         </div>
                         <div class='controller'>
-                            <button onClick='manageOrder(\"processing\",$orderID)' >Accept</button>
-                            <button onClick='manageOrder(\"shipped\",$orderID)'>Shipped</button>
-                            <button onClick='manageOrder(\"rejected\",$orderID)'>Reject</button>
+                            <button class='controller-btns' onClick='manageOrder(\"processing\",$orderID)' >Accept</button>
+                            <button class='controller-btns' onClick='manageOrder(\"shipped\",$orderID)'>Shipped</button>
+                            <button class='controller-btns' onClick='manageOrder(\"rejected\",$orderID)'>Reject</button>
                         </div>
                     </div>
                     ";

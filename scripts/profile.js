@@ -62,7 +62,6 @@ function editProfileDataValidation(userID) {
 
         document.getElementById("editProfileForm").submit();
 
-
         // var form = $('#editProfileForm')[0];
         // var form_data = new FormData(form);
 
@@ -89,16 +88,16 @@ function editProfileDataValidation(userID) {
 
 function userLogout() {
     document.cookie = "userID=; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-    window.open("../shopping-web-site/login.php", "_self");
+    window.open("../shopping-web-site/welcome.php", "_self");
 }
 
 function cart() {
     var userID = getCookie('userID');
     if (userID.length == 0) {
-        window.open("login.php", "_self");
+        window.open("../shopping-web-site/welcome.php", "_self");
     }
     else {
-        window.open("cart.php", "_self");
+        window.open("../shopping-web-site/cart.php", "_self");
     }
 }
 
